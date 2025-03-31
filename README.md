@@ -6,3 +6,6 @@ Thuật toán IDS
 
 Thuật toán IDA*
 ![IDAstar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDAstar.gif)
+
+Thuật toán A*
+![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Astar.gif)
