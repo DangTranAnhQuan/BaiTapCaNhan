@@ -15,3 +15,6 @@ Thuật toán GreedySearch
 
 Thuật toán BFS
 ![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS.gif)
+
+Thuật toán Hill Climbing
+![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing.gif)
