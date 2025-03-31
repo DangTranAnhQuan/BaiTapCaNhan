@@ -9,3 +9,6 @@ Thuật toán IDA*
 
 Thuật toán A*
 ![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Astar.gif)
+
+Thuật toán GreedySearch
+![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch.gif)
