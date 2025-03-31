@@ -21,3 +21,6 @@ Thuật toán Hill Climbing
 
 Thuật toán SimpleHill
 ![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill.gif)
+
+Thuật toán UCS
+![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS.gif)
