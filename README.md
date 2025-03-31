@@ -18,3 +18,6 @@ Thuật toán BFS
 
 Thuật toán Hill Climbing
 ![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing.gif)
+
+Thuật toán SimpleHill
+![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill.gif)
