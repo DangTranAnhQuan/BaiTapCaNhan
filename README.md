@@ -24,3 +24,6 @@ Thuật toán SimpleHill
 
 Thuật toán UCS
 ![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS.gif)
+
+Thuật toán DFS
+![DFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/DFS.gif)
