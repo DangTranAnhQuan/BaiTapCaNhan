@@ -10,16 +10,16 @@ Thuật toán IDA*
 Thuật toán A*           
 ![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Astar.gif)
 
-Thuật toán GreedySearch
+Thuật toán GreedySearch      
 ![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch.gif)
 
 Thuật toán BFS          
 ![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS.gif)
 
-Thuật toán Hill Climbing
+Thuật toán Hill Climbing    
 ![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing.gif)
 
-Thuật toán SimpleHill
+Thuật toán SimpleHill      
 ![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill.gif)
 
 Thuật toán UCS           
