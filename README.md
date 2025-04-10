@@ -20,7 +20,7 @@ Thuật toán Hill Climbing
 ![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing.gif)
 
 Thuật toán SimpleHill      
-![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill.gif)
+![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill_new.gif)
 
 Thuật toán UCS           
 ![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS_new.gif)
