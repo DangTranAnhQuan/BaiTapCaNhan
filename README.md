@@ -27,3 +27,6 @@ Thuật toán UCS
 
 Thuật toán DFS            
 ![DFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/DFS_new.gif)
+
+Thuật toán Stochastic Climbing
+![Stochastic](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/StochasticClimbing.gif)
