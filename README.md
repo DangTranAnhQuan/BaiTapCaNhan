@@ -5,7 +5,7 @@ Thuật toán IDS
 ![IDS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDS_new.gif)
 
 Thuật toán IDA*             
-![IDAstar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDAstar.gif)
+![IDAstar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDA_star_new.gif)
 
 Thuật toán A*           
 ![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Astar.gif)
