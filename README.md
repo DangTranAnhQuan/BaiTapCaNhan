@@ -17,7 +17,7 @@ Thuật toán BFS
 ![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS_new.gif)
 
 Thuật toán Hill Climbing    
-![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing.gif)
+![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing_new.gif)
 
 Thuật toán SimpleHill      
 ![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill_new.gif)
