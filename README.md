@@ -8,7 +8,7 @@ Thuật toán IDA*
 ![IDAstar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDA_star_new.gif)
 
 Thuật toán A*           
-![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Astar.gif)
+![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/A_star_new.gif)
 
 Thuật toán GreedySearch      
 ![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch.gif)
