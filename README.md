@@ -33,3 +33,6 @@ Thuật toán Stochastic Climbing
 
 Thuật toán Beam Search
 ![BeamSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BeamSearch.gif)
+
+Thuật toán Simulated Annealing
+![SimulatedAnnealing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimulatedAnnealing.gif)
