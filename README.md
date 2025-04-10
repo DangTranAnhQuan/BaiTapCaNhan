@@ -30,3 +30,6 @@ Thuật toán DFS
 
 Thuật toán Stochastic Climbing
 ![Stochastic](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/StochasticClimbing.gif)
+
+Thuật toán Beam Search
+![BeamSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BeamSearch.gif)
