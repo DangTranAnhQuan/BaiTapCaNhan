@@ -14,7 +14,7 @@ Thuật toán GreedySearch
 ![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch_new.gif)
 
 Thuật toán BFS          
-![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS.gif)
+![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS_new.gif)
 
 Thuật toán Hill Climbing    
 ![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing.gif)
