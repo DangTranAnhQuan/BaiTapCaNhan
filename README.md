@@ -2,7 +2,7 @@
 Lưu trữ các gifs chuyển động của các thuật toán
 
 Thuật toán IDS             
-![IDS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDS.gif)
+![IDS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDS_new.gif)
 
 Thuật toán IDA*             
 ![IDAstar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDAstar.gif)
