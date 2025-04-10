@@ -23,7 +23,7 @@ Thuật toán SimpleHill
 ![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill.gif)
 
 Thuật toán UCS           
-![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS.gif)
+![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS_new.gif)
 
 Thuật toán DFS            
 ![DFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/DFS_new.gif)
