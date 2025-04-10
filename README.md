@@ -26,4 +26,4 @@ Thuật toán UCS
 ![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS.gif)
 
 Thuật toán DFS            
-![DFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/DFS.gif)
+![DFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/DFS_new.gif)
