@@ -11,7 +11,7 @@ Thuật toán A*
 ![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/A_star_new.gif)
 
 Thuật toán GreedySearch      
-![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch.gif)
+![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch_new.gif)
 
 Thuật toán BFS          
 ![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS.gif)
