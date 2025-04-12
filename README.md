@@ -39,3 +39,6 @@ Thuật toán Simulated Annealing
 
 Thuật toán And Or Search 
 ![AndOrSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/AndOrSearch.gif)
+
+Thuật toán Belief Search
+![BeliefSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BeliefSearch.gif)
