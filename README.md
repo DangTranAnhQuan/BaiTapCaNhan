@@ -10,7 +10,7 @@ Thuật toán IDA*
 Thuật toán A*           
 ![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/A_star_new.gif)
 
-Thuật toán GreedySearch      
+Thuật toán Greedy Search      
 ![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch_new.gif)
 
 Thuật toán BFS          
@@ -19,7 +19,7 @@ Thuật toán BFS
 Thuật toán Hill Climbing    
 ![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing_1.gif)
 
-Thuật toán SimpleHill      
+Thuật toán Simple Hill      
 ![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill_new.gif)
 
 Thuật toán UCS           
@@ -36,3 +36,6 @@ Thuật toán Beam Search
 
 Thuật toán Simulated Annealing
 ![SimulatedAnnealing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimulatedAnnealing.gif)
+
+Thuật toán And Or Search 
+![AndOrSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/AndOrSearch.gif)
