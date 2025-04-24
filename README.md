@@ -45,3 +45,6 @@ Thuật toán Belief Search
 
 Thuật toán Backtracking Search
 ![BacktrackingSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BacktrackingSearch.gif)
+
+Thuật toán Partial Observations
+![PartialObservations](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/PartialObservations.gif)
