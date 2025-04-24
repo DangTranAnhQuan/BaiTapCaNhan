@@ -42,3 +42,6 @@ Thuật toán And Or Search
 
 Thuật toán Belief Search
 ![BeliefSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BeliefSearch.gif)
+
+Thuật toán Backtracking Search
+![BacktrackingSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BacktrackingSearch.gif)
