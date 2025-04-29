@@ -34,6 +34,9 @@ Thuật toán Stochastic Climbing
 Thuật toán Beam Search
 ![BeamSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BeamSearch.gif)
 
+Thuật toán Genetic Algorithm
+![GeneticAlgorithm](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GeneticAlgorithm.gif)
+
 Thuật toán Simulated Annealing
 ![SimulatedAnnealing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimulatedAnnealing.gif)
 
