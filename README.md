@@ -19,12 +19,18 @@ Các tham số độ phức tạp:
 
 # Thuật toán IDS     
 Ý tưởng cốt lõi: Kết hợp BFS (tối ưu) và DFS (bộ nhớ thấp) bằng cách thực hiện DLS (Depth-Limited Search) với giới hạn độ sâu tăng dần. 
+
 Cách hoạt động: Lặp DLS với độ sâu 0, 1, 2, ... cho đến khi tìm thấy lời giải. Mỗi lần DLS là một DFS bị giới hạn độ sâu. 
+
 Đặc điểm: 
+
   Hoàn chỉnh: Có.
+  
   Tối ưu: Có (về số bước).
-Độ phức tạp (ước lượng): 
+Độ phức tạp (ước lượng):
+
   Thời gian: O(b^d).
+  
   Không gian: O(bd).
 ![IDS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDS_new.gif)
 
