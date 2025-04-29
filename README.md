@@ -2,12 +2,19 @@
 Trang readme này trình bày mô tả chi tiết về các thuật toán tìm kiếm được triển khai trong mã nguồn Python để giải quyết bài toán 8-puzzle. Mỗi thuật toán được phân tích dựa trên ý tưởng cốt lõi, cơ chế hoạt động, các đặc điểm về tính hoàn chỉnh, tối ưu và độ phức tạp thuật toán ước lượng.
 
 Các tham số độ phức tạp:
+
 •	b: Hệ số nhánh (tối đa 4 cho 8-puzzle).
+
 •	d: Độ sâu của lời giải nông nhất.
+
 •	m: Độ sâu tối đa của không gian trạng thái (khoảng 31 cho 8-puzzle).	
+
 •	V: Tổng số trạng thái (V=9! / 2 = 181 440 cho 8-puzzle).
+
 •	E: Tổng số bước chuyển trạng thái.
+
 •	C*: Chi phí của lời giải tối ưu (bằng d khi chi phí mỗi bước là 1).
+
 •	epsilon: Chi phí bước nhỏ nhất (bằng 1).
 
 # Thuật toán IDS     
