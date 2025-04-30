@@ -270,7 +270,7 @@ Cách hoạt động: Giống belief_search, duy trì và cập nhật tập h�
   Thời gian: Lũy thừa theo V, có thể lên tới O(2^V).
   
   Không gian: Lũy thừa theo V, có thể lên tới O(2^V).
-![PartialObservations](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/PartialObservations_new.gif)
+![PartialObservations](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/PatialObservations_ver2.gif)
 
 # Thuật toán Backtracking Search
 Ý tưởng cốt lõi: Xây dựng giải pháp từng bước, nếu gặp ngõ cụt, quay lại bước trước và thử lựa chọn khác. 
