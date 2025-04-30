@@ -288,4 +288,4 @@ Cách hoạt động: Sử dụng đệ quy để khám phá đường đi. Thê
   Thời gian: O(b^M) với M là max_depth. Tương tự DFS.
   
   Không gian: O(M). Chỉ cần lưu đường đi hiện tại.
-![BacktrackingSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BacktrackingSearch.gif)
+![BacktrackingSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BacktrackingSearch_ver2.gif)
