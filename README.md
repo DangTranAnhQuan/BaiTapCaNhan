@@ -3,7 +3,7 @@
 Trang readme này trình bày mô tả chi tiết về các thuật toán tìm kiếm được triển khai trong mã nguồn Python để giải quyết bài toán 8-puzzle. Mỗi thuật toán được phân tích dựa trên ý tưởng cốt lõi, cơ chế hoạt động, các đặc điểm về tính hoàn chỉnh, tối ưu và độ phức tạp thuật toán ước lượng.
 
 # 2. Nội dung
-# 2.1. Các thuật toán Tìm kiếm không có thông tin (Uninformed Search Algorithms
+# 2.1. Các thuật toán Tìm kiếm không có thông tin (Uninformed Search Algorithms)
 Một bài toán tìm kiếm thường bao gồm các thành phần sau:
 
 Không gian trạng thái (State Space): Tập hợp tất cả các trạng thái có thể đạt được. Đối với bài toán 8-puzzle, mỗi cách sắp xếp các ô là một trạng thái. Tổng số trạng thái là 9!/2=181,440.  
@@ -207,7 +207,7 @@ Cách hoạt động: Lặp: đánh giá tất cả hàng xóm, chọn hàng xó
   Thời gian: Mỗi bước tốn O(b), không đảm bảo thời gian tìm ra lời giải.
   
   Không gian: O(1).
-Nhận xét về hiệu suất: Tương tự Simple Hill Climbing thì thuật toán leo đồi Hill Climbing cũng rất nhanh và tiết kiệm bộ nhớ nhưng thường không tìm được lời giải tối ưu và dễ bị "kẹt".
+Nhận xét về hiệu suất: Tương tự Simple Hill Climbing thì thuật toán leo đồi Hill Climbing cũng rất nhanh và tiết kiệm bộ nhớ nhưng thường không tìm được lời giải tối ưu và dễ bị kẹt.
 ![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing_1.gif)
 
 # Thuật toán Stochastic Climbing
