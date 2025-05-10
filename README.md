@@ -304,7 +304,7 @@ Cách hoạt động: Thực hiện BFS trên không gian trạng thái niềm t
   Thời gian: Có thể là O(2^V). Rất cao.
   
   Không gian: Có thể là O(2^V).
-![BeliefSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Belief_search_ver2.gif)
+![BeliefSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Belief_Search_ver3.gif)
 
 # Thuật toán Partial Observations
 Ý tưởng cốt lõi: Tương tự belief_search, xử lý việc không biết chắc trạng thái hiện tại.
