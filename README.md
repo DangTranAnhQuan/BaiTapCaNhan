@@ -1,5 +1,24 @@
 # BaiTapCaNhan
+# 1. Mục tiêu
 Trang readme này trình bày mô tả chi tiết về các thuật toán tìm kiếm được triển khai trong mã nguồn Python để giải quyết bài toán 8-puzzle. Mỗi thuật toán được phân tích dựa trên ý tưởng cốt lõi, cơ chế hoạt động, các đặc điểm về tính hoàn chỉnh, tối ưu và độ phức tạp thuật toán ước lượng.
+
+# 2. Nội dung
+# 2.1. Các thuật toán Tìm kiếm không có thông tin (Uninformed Search Algorithms
+Một bài toán tìm kiếm thường bao gồm các thành phần sau:
+
+Không gian trạng thái (State Space): Tập hợp tất cả các trạng thái có thể đạt được. Đối với bài toán 8-puzzle, mỗi cách sắp xếp các ô là một trạng thái. Tổng số trạng thái là 9!/2=181,440.  
+
+Trạng thái ban đầu (Initial State): Trạng thái xuất phát của bài toán.
+
+Hành động (Actions): Các thao tác có thể thực hiện để chuyển từ trạng thái này sang trạng thái khác (ví dụ: di chuyển ô trống lên, xuống, trái, phải).
+
+Mô hình chuyển đổi (Transition Model): Mô tả trạng thái kết quả khi thực hiện một hành động ở một trạng thái cụ thể.
+
+Kiểm tra đích (Goal Test): Xác định xem một trạng thái có phải là trạng thái đích (trạng thái mong muốn) hay không.
+
+Chi phí đường đi (Path Cost): Hàm gán một chi phí số cho một đường đi. Trong bài toán 8-puzzle cơ bản, mỗi bước di chuyển có thể coi là chi phí bằng 1.
+
+Giải pháp (Solution): Là một chuỗi các hành động, gọi là đường đi (path), từ trạng thái ban đầu đến một trạng thái đích. Một giải pháp tối ưu là giải pháp có chi phí đường đi thấp nhất.
 
 Các tham số độ phức tạp:
 
@@ -32,8 +51,71 @@ Cách hoạt động: Lặp DLS với độ sâu 0, 1, 2, ... cho đến khi tì
   Thời gian: O(b^d).
   
   Không gian: O(bd).
+
+Nhận xét về hiệu suất: IDS kết hợp được ưu điểm của BFS (tính tối ưu về số bước, tính hoàn chỉnh) và DFS (yêu cầu bộ nhớ thấp). Mặc dù nó duyệt lại các nút nhiều lần, chi phí tổng thể không quá lớn so với BFS.
 ![IDS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDS_new.gif)
 
+# Thuật toán BFS     
+Ý tưởng cốt lõi: Khám phá trạng thái theo từng lớp độ sâu, đảm bảo tìm thấy đường đi ngắn nhất về số bước. 
+
+Cách hoạt động: Sử dụng hàng đợi (Queue - FIFO). Thăm tất cả các nút ở độ sâu k trước khi thăm bất kỳ nút nào ở độ sâu k+1. Sử dụng tập visited để tránh duyệt lại trạng thái. 
+
+Đặc điểm: 
+
+  Hoàn chỉnh (Complete): Có.
+  
+  Tối ưu (Optimal): Có (về số bước đi).
+  
+Độ phức tạp (ước lượng): 
+
+  Thời gian: O(b^d).
+  
+  Không gian: O(b^d).
+  
+Nhận xét về hiệu suất: BFS đảm bảo tìm ra lời giải ngắn nhất (nếu chi phí bước là như nhau). Tuy nhiên, yêu cầu về bộ nhớ và thời gian có thể rất lớn nếu lời giải ở độ sâu lớn.
+![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS_new.gif)
+
+
+# Thuật toán UCS          
+Ý tưởng cốt lõi: Mở rộng nút có chi phí đường đi (g) thấp nhất tính từ nút bắt đầu. Tương đương BFS khi chi phí mọi hành động là 1. 
+
+Cách hoạt động: Sử dụng hàng đợi ưu tiên (Priority Queue) sắp xếp theo chi phí g. Luôn chọn nút có g nhỏ nhất để mở rộng. Sử dụng tập visited. 
+
+Đặc điểm: 
+
+  Hoàn chỉnh: Có.
+  
+  Tối ưu: Có (tìm đường đi với tổng chi phí thấp nhất).
+  
+Độ phức tạp (ước lượng): (Với chi phí bước là 1, C* = d) 
+
+  Thời gian: O(b^d) hoặc O(b^(1 + floor(C*/epsilon))). Tương tự BFS trong trường hợp này. Có thể lên đến O(V log V) nếu xét chi phí hàng đợi ưu tiên.
+  
+  Không gian: O(b^d).
+
+Nhận xét về hiệu suất: UCS luôn tìm ra đường đi có chi phí thấp nhất. Giống như BFS, nó có thể gặp vấn đề về thời gian và không gian nếu không gian tìm kiếm lớn.
+![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS_new.gif)
+
+# Thuật toán DFS     
+Ý tưởng cốt lõi: Khám phá sâu nhất có thể theo một nhánh trước khi quay lui (backtrack). 
+
+Cách hoạt động: Sử dụng ngăn xếp (Stack - LIFO) hoặc đệ quy. Đi sâu vào một nhánh cho đến khi gặp nút lá hoặc đích, sau đó quay lại và thử nhánh khác. Sử dụng tập visited để tránh chu trình vô hạn. 
+
+Đặc điểm: 
+
+  Hoàn chỉnh: Có (vì không gian trạng thái 8-puzzle hữu hạn và có kiểm tra visited).
+  
+  Tối ưu: Không.
+Độ phức tạp (ước lượng): 
+
+  Thời gian: O(V) hoặc O(b^m) trong trường hợp xấu nhất. Với visited, giới hạn bởi số trạng thái V.
+  
+  Không gian: O(bm) cho ngăn xếp/đệ quy, nhưng có thể lên tới O(V) nếu tính cả tập visited. Thường coi là tiết kiệm bộ nhớ hơn BFS về lưu trữ đường đi.
+
+Nhận xét về hiệu suất: DFS có yêu cầu bộ nhớ ít hơn BFS. Tuy nhiên, nó không đảm bảo tìm ra lời giải tối ưu và có thể đi vào các nhánh rất sâu không cần thiết.
+![DFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/DFS_new.gif)
+
+# 2.2. Các thuật toán Tìm kiếm có thông tin (Informed Search Algorithms)
 # Thuật toán IDA*      
 Ý tưởng cốt lõi: Kết hợp A* và IDS. Thực hiện tìm kiếm giới hạn "chi phí f" thay vì giới hạn độ sâu. Tối ưu và tiết kiệm bộ nhớ.
 
@@ -49,6 +131,8 @@ Cách hoạt động: Đặt ngưỡng chi phí f. Thực hiện tìm kiếm ki�
   Thời gian: O(b^d). Tương tự A* về số nút mở rộng.
   
   Không gian: O(bd). Rất tiết kiệm bộ nhớ.
+
+Nhận xét về hiệu suất: IDA* đạt được tính tối ưu của A* trong khi chỉ yêu cầu bộ nhớ tương đương với DFS. Đây là một lựa chọn tốt khi bộ nhớ là một hạn chế.
 ![IDAstar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/IDA_star_new.gif)
 
 # Thuật toán A*     
@@ -66,6 +150,8 @@ Cách hoạt động: Sử dụng hàng đợi ưu tiên sắp xếp theo f(n). 
   Thời gian: Phụ thuộc mạnh vào heuristic. Từ O(V log V) đến O(b^d) (trường hợp xấu).
   
   Không gian: O(b^d) hoặc O(V). Thường là hạn chế lớn nhất của A*.
+
+Nhận xét về hiệu suất: A* là một trong những thuật toán tìm kiếm tối ưu hiệu quả nhất nếu có hàm heuristic tốt. Tuy nhiên, nó đòi hỏi nhiều bộ nhớ để lưu trữ các nút đã mở rộng.
 ![Astar](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/A_star_new.gif)
 
 # Thuật toán Greedy Search    
@@ -84,26 +170,11 @@ Cách hoạt động: Sử dụng hàng đợi ưu tiên sắp xếp theo h(n). 
   Thời gian: Phụ thuộc mạnh vào heuristic. Xấu nhất có thể là O(V) hoặc O(b^m).
   
   Không gian: Phụ thuộc mạnh vào heuristic. Xấu nhất có thể là O(V) hoặc O(b^m).
+
+Nhận xét về hiệu suất: Thường tìm ra lời giải nhanh chóng nhưng không đảm bảo tối ưu hoặc thậm chí không tìm ra lời giải (có thể bị kẹt). Hiệu quả phụ thuộc lớn vào chất lượng của hàm heuristic.
 ![GreedySearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GreedySearch_new.gif)
 
-# Thuật toán BFS     
-Ý tưởng cốt lõi: Khám phá trạng thái theo từng lớp độ sâu, đảm bảo tìm thấy đường đi ngắn nhất về số bước. 
-
-Cách hoạt động: Sử dụng hàng đợi (Queue - FIFO). Thăm tất cả các nút ở độ sâu k trước khi thăm bất kỳ nút nào ở độ sâu k+1. Sử dụng tập visited để tránh duyệt lại trạng thái. 
-
-Đặc điểm: 
-
-  Hoàn chỉnh (Complete): Có.
-  
-  Tối ưu (Optimal): Có (về số bước đi).
-  
-Độ phức tạp (ước lượng): 
-
-  Thời gian: O(b^d).
-  
-  Không gian: O(b^d).
-![BFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BFS_new.gif)
-
+# 2.3. Tìm kiếm cục bộ (Local Search)
 # Thuật toán Simple Hill Climbing  
 Ý tưởng cốt lõi: Tìm kiếm cục bộ. Di chuyển đến trạng thái hàng xóm đầu tiên tốt hơn (heuristic h thấp hơn) trạng thái hiện tại. 
 
@@ -120,6 +191,8 @@ Cách hoạt động: Lặp: tìm hàng xóm, nếu có hàng xóm tốt hơn đ
   Thời gian: Nhanh cho mỗi bước, không đảm bảo thời gian tìm ra lời giải.
   
   Không gian: O(1).
+
+Nhận xét về hiệu suất: Thuật toán leo đồi này rất nhanh và tiết kiệm bộ nhớ nhưng thường không tìm được lời giải tối ưu và dễ bị kẹt.
 ![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill_new.gif)
 
 # Thuật toán Hill Climbing  
@@ -134,42 +207,8 @@ Cách hoạt động: Lặp: đánh giá tất cả hàng xóm, chọn hàng xó
   Thời gian: Mỗi bước tốn O(b), không đảm bảo thời gian tìm ra lời giải.
   
   Không gian: O(1).
+Nhận xét về hiệu suất: Tương tự Simple Hill Climbing thì thuật toán leo đồi Hill Climbing cũng rất nhanh và tiết kiệm bộ nhớ nhưng thường không tìm được lời giải tối ưu và dễ bị "kẹt".
 ![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing_1.gif)
-
-# Thuật toán UCS          
-Ý tưởng cốt lõi: Mở rộng nút có chi phí đường đi (g) thấp nhất tính từ nút bắt đầu. Tương đương BFS khi chi phí mọi hành động là 1. 
-
-Cách hoạt động: Sử dụng hàng đợi ưu tiên (Priority Queue) sắp xếp theo chi phí g. Luôn chọn nút có g nhỏ nhất để mở rộng. Sử dụng tập visited. 
-
-Đặc điểm: 
-
-  Hoàn chỉnh: Có.
-  
-  Tối ưu: Có (tìm đường đi với tổng chi phí thấp nhất).
-  
-Độ phức tạp (ước lượng): (Với chi phí bước là 1, C* = d) 
-
-  Thời gian: O(b^d) hoặc O(b^(1 + floor(C*/epsilon))). Tương tự BFS trong trường hợp này. Có thể lên đến O(V log V) nếu xét chi phí hàng đợi ưu tiên.
-  
-  Không gian: O(b^d).
-![UCS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/UCS_new.gif)
-
-# Thuật toán DFS     
-Ý tưởng cốt lõi: Khám phá sâu nhất có thể theo một nhánh trước khi quay lui (backtrack). 
-
-Cách hoạt động: Sử dụng ngăn xếp (Stack - LIFO) hoặc đệ quy. Đi sâu vào một nhánh cho đến khi gặp nút lá hoặc đích, sau đó quay lại và thử nhánh khác. Sử dụng tập visited để tránh chu trình vô hạn. 
-
-Đặc điểm: 
-
-  Hoàn chỉnh: Có (vì không gian trạng thái 8-puzzle hữu hạn và có kiểm tra visited).
-  
-  Tối ưu: Không.
-Độ phức tạp (ước lượng): 
-
-  Thời gian: O(V) hoặc O(b^m) trong trường hợp xấu nhất. Với visited, giới hạn bởi số trạng thái V.
-  
-  Không gian: O(bm) cho ngăn xếp/đệ quy, nhưng có thể lên tới O(V) nếu tính cả tập visited. Thường coi là tiết kiệm bộ nhớ hơn BFS về lưu trữ đường đi.
-![DFS](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/DFS_new.gif)
 
 # Thuật toán Stochastic Climbing
 Ý tưởng cốt lõi: Tìm kiếm cục bộ. Chọn ngẫu nhiên một hàng xóm, nếu tốt hơn thì di chuyển, nếu không thì thử hàng xóm ngẫu nhiên khác. 
@@ -183,6 +222,8 @@ Cách hoạt động: Lặp: chọn ngẫu nhiên hàng xóm, nếu tốt hơn t
   Thời gian: Không xác định, phụ thuộc may mắn.
   
   Không gian: O(1).
+
+Nhận xét về hiệu suất: Tương tự như các thuật toán leo đồi khác, nhanh và tiết kiệm bộ nhớ nhưng không đảm bảo tìm ra giải pháp tốt.
 ![Stochastic](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/StochasticClimbing.gif)
 
 # Thuật toán Beam Search
@@ -200,6 +241,8 @@ Cách hoạt động: Lặp: mở rộng k nút tốt nhất, tạo con cháu, c
   Thời gian: O(k * b * d) hoặc tương tự. Nhanh hơn BFS/A*.
   
   Không gian: O(k * b). Bị giới hạn bởi k.
+
+Nhận xét về hiệu suất: Beam Search là một sự thỏa hiệp giữa hiệu quả và tính đầy đủ/tối ưu. Nó có thể tìm ra giải pháp tốt một cách nhanh chóng với bộ nhớ hạn chế, nhưng có thể bỏ lỡ giải pháp tối ưu.
 ![BeamSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BeamSearch.gif)
 
 # Thuật toán Simulated Annealing
@@ -214,6 +257,8 @@ Cách hoạt động: Lặp: chọn hàng xóm ngẫu nhiên. Nếu tốt hơn, 
 Thời gian: Phụ thuộc vào lịch trình làm nguội.
 
 Không gian: O(1).
+
+Nhận xét về hiệu suất: Simulated Annealing có thể thoát khỏi các cực tiểu cục bộ và tìm ra giải pháp gần tối ưu toàn cục, nhưng hiệu suất phụ thuộc vào việc lựa chọn các tham số (lịch trình làm nguội).
 ![SimulatedAnnealing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimulatedAnnealing.gif)
 
 # Thuật toán Genetic Algorithm
@@ -228,8 +273,11 @@ Cách hoạt động: Tối ưu hóa trạng thái, không phải đường đi.
   Thời gian: O(generations * population_size * cost_per_individual).
   
   Không gian: O(population_size).
+
+Nhận xét về hiệu suất: Thuật toán di truyền có thể hiệu quả cho các không gian tìm kiếm phức tạp, nhưng việc thiết kế các toán tử di truyền và hàm fitness phù hợp là rất quan trọng. Nó thường dùng để tìm trạng thái tốt chứ không phải đường đi.
 ![GeneticAlgorithm](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/GeneticAlgorithm.gif)
 
+# 2.4. Tìm kiếm trong môi trường phức tạp
 # Thuật toán And Or Search 
 Ý tưởng cốt lõi: Dùng cho bài toán phân rã thành bài toán con (AND nodes, OR nodes). 
 
@@ -272,6 +320,7 @@ Cách hoạt động: Giống belief_search, duy trì và cập nhật tập h�
   Không gian: Lũy thừa theo V, có thể lên tới O(2^V).
 ![PartialObservations](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/PatialObservations_ver2.gif)
 
+# 2.5. Tìm kiếm trong môi trường có ràng buộc (Constraint Satisfaction Problems - CSPs)
 # Thuật toán Backtracking Search
 Ý tưởng cốt lõi: Xây dựng giải pháp từng bước, nếu gặp ngõ cụt, quay lại bước trước và thử lựa chọn khác. 
 
@@ -289,3 +338,30 @@ Cách hoạt động: Sử dụng đệ quy để khám phá đường đi. Thê
   
   Không gian: O(M). Chỉ cần lưu đường đi hiện tại.
 ![BacktrackingSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BacktrackingSearch_ver2.gif)
+
+# Thuật toán Forward Checking
+# Thuật toán AC-3
+
+# 2.6. Học tăng cường (Reinforcement Learning)
+# Q-Learning
+
+# 3. Kết luận
+Dự án này đã thực hiện triển khai và mô tả một loạt các thuật toán tìm kiếm, từ cơ bản đến nâng cao, để giải quyết bài toán 8-puzzle. Các thuật toán bao gồm cả tìm kiếm không có thông tin, tìm kiếm có thông tin, các thuật toán tìm kiếm cục bộ và một số thuật toán cho các vấn đề phức tạp hơn như không gian trạng thái niềm tin.   
+
+Một số kết quả đạt được:
+
+Hiểu rõ về ý tưởng, cách hoạt động, ưu nhược điểm và độ phức tạp của nhiều thuật toán tìm kiếm phổ biến.
+
+Có được một bộ mã nguồn Python triển khai các thuật toán này, có thể dùng để so sánh và đối chiếu hiệu suất của chúng trên bài toán 8-puzzle.
+
+Phân tích được các đặc tính quan trọng như tính hoàn chỉnh, tính tối ưu, độ phức tạp thời gian và không gian của mỗi thuật toán trong bối cảnh giải quyết 8-puzzle.
+
+Việc áp dụng các thuật toán này lên trò chơi 8 ô chữ cho thấy sự khác biệt rõ rệt về hiệu suất:
+
+Các thuật toán có thông tin như A* và IDA* (với heuristic tốt) thường hiệu quả hơn nhiều trong việc tìm ra lời giải tối ưu so với các thuật toán không có thông tin.
+
+Các thuật toán không có thông tin như BFS và IDS đảm bảo tính tối ưu về số bước nhưng có thể tốn kém về tài nguyên.
+
+Các thuật toán tìm kiếm cục bộ nhanh và tiết kiệm bộ nhớ nhưng thường không đảm bảo tìm được lời giải hoặc lời giải tối ưu.
+
+Nhìn chung, dự án cung cấp một cái nhìn toàn diện và thực tiễn về các phương pháp tìm kiếm trong trí tuệ nhân tạo thông qua một bài toán kinh điển.
