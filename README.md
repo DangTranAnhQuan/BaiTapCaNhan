@@ -318,7 +318,7 @@ Cách hoạt động: Giống belief_search, duy trì và cập nhật tập h�
   Thời gian: Lũy thừa theo V, có thể lên tới O(2^V).
   
   Không gian: Lũy thừa theo V, có thể lên tới O(2^V).
-![PartialObservations](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/PatialObservations_ver2.gif)
+![PartialObservations](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/PatialObservations_ver3.gif)
 
 # 2.5. Tìm kiếm trong môi trường có ràng buộc (Constraint Satisfaction Problems - CSPs)
 # Thuật toán Backtracking Search
