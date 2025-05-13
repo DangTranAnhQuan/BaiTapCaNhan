@@ -357,15 +357,11 @@ Cuối cùng, khi một phép gán bị hủy bỏ (backtrack), các giá trị 
 
 Hoàn chỉnh: Có (khi được sử dụng kết hợp với một thuật toán tìm kiếm hoàn chỉnh như Backtracking). Nó không tự mình là một thuật toán tìm kiếm hoàn chỉnh mà là một kỹ thuật tăng cường.
 
-Tối ưu: Không áp dụng trực tiếp. Mục tiêu của Forward Checking là tăng hiệu quả của thuật toán tìm kiếm bằng cách cắt tỉa không gian tìm kiếm, giúp tìm ra giải pháp (bất kỳ giải pháp nào thỏa mãn ràng buộc) 
-
-nhanh hơn, chứ không phải để tìm giải pháp tối ưu theo một tiêu chí nào đó.
+Tối ưu: Không áp dụng trực tiếp. Mục tiêu của Forward Checking là tăng hiệu quả của thuật toán tìm kiếm bằng cách cắt tỉa không gian tìm kiếm, giúp tìm ra giải pháp (bất kỳ giải pháp nào thỏa mãn ràng buộc) nhanh hơn, chứ không phải để tìm giải pháp tối ưu theo một tiêu chí nào đó.
 
 Độ phức tạp (ước lượng):
 
-Thời gian: Thường cải thiện đáng kể hiệu suất trung bình của Backtracking Search bằng cách giảm số lượng các nút phải duyệt. Tuy nhiên, trong trường hợp xấu nhất, độ phức tạp vẫn có thể là hàm mũ so với kích 
-
-thước bài toán. Chi phí cho mỗi lần gán biến tăng lên do phải kiểm tra các biến liên quan.
+Thời gian: Thường cải thiện đáng kể hiệu suất trung bình của Backtracking Search bằng cách giảm số lượng các nút phải duyệt. Tuy nhiên, trong trường hợp xấu nhất, độ phức tạp vẫn có thể là hàm mũ so với kích thước bài toán. Chi phí cho mỗi lần gán biến tăng lên do phải kiểm tra các biến liên quan.
 
 Không gian: Cần thêm không gian để lưu trữ các miền giá trị hiện tại của các biến, có thể bị thay đổi trong quá trình tìm kiếm. Thường là O(nd) với n là số biến và d là kích thước miền giá trị lớn nhất.
 # Thuật toán AC-3
