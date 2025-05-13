@@ -340,6 +340,34 @@ Cách hoạt động: Sử dụng đệ quy để khám phá đường đi. Thê
 ![BacktrackingSearch](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/BacktrackingSearch_ver2.gif)
 
 # Thuật toán Forward Checking
+Ý tưởng cốt lõi: Khi một giá trị được gán cho một biến trong quá trình tìm kiếm (thường là trong Backtracking Search), thuật toán này sẽ "nhìn về phía trước" (forward) để kiểm tra các biến chưa được gán có ràng 
+
+buộc với biến vừa được gán. Nó loại bỏ các giá trị không tương thích khỏi miền giá trị của các biến chưa được gán đó, giúp phát hiện sớm các ngõ cụt.
+
+Cách hoạt động:
+Đầu tiên, khi một biến Xi được gán một giá trị v (ví dụ, trong một bước của thuật toán Backtracking).
+
+Thứ hai, đối với mỗi biến Xj chưa được gán mà có ràng buộc với Xi: Loại bỏ khỏi miền giá trị Dj của Xj tất cả các giá trị không nhất quán với việc Xi=v.
+
+Thứ ba, nếu việc loại bỏ này làm cho miền giá trị của bất kỳ biến Xj nào trở thành rỗng, điều đó có nghĩa là phép gán hiện tại (Xi =v) dẫn đến ngõ cụt. Thuật toán sẽ backtrack (nếu đang kết hợp với Backtracking).
+
+Cuối cùng, khi một phép gán bị hủy bỏ (backtrack), các giá trị đã bị loại bỏ khỏi miền của các biến khác do phép gán đó phải được khôi phục.
+
+Đặc điểm:
+
+Hoàn chỉnh: Có (khi được sử dụng kết hợp với một thuật toán tìm kiếm hoàn chỉnh như Backtracking). Nó không tự mình là một thuật toán tìm kiếm hoàn chỉnh mà là một kỹ thuật tăng cường.
+
+Tối ưu: Không áp dụng trực tiếp. Mục tiêu của Forward Checking là tăng hiệu quả của thuật toán tìm kiếm bằng cách cắt tỉa không gian tìm kiếm, giúp tìm ra giải pháp (bất kỳ giải pháp nào thỏa mãn ràng buộc) 
+
+nhanh hơn, chứ không phải để tìm giải pháp tối ưu theo một tiêu chí nào đó.
+
+Độ phức tạp (ước lượng):
+
+Thời gian: Thường cải thiện đáng kể hiệu suất trung bình của Backtracking Search bằng cách giảm số lượng các nút phải duyệt. Tuy nhiên, trong trường hợp xấu nhất, độ phức tạp vẫn có thể là hàm mũ so với kích 
+
+thước bài toán. Chi phí cho mỗi lần gán biến tăng lên do phải kiểm tra các biến liên quan.
+
+Không gian: Cần thêm không gian để lưu trữ các miền giá trị hiện tại của các biến, có thể bị thay đổi trong quá trình tìm kiếm. Thường là O(nd) với n là số biến và d là kích thước miền giá trị lớn nhất.
 # Thuật toán AC-3
 
 # 2.6. Học tăng cường (Reinforcement Learning)
