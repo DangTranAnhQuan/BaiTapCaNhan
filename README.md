@@ -382,7 +382,7 @@ Tối ưu: Không áp dụng. Mục tiêu là làm cho CSP nhất quán cung.
 
 Độ phức tạp (ước lượng):
 
-Thời gian: O(c.(d mũ 3)) hoặc hiệu quả hơn là O(c⋅(d mũ 2)) với một số cách triển khai tối ưu, trong đó c là số lượng cung (ràng buộc hai ngôi) và d là kích thước tối đa của miền giá trị của các biến.
+Thời gian: O(c.(d^3))  hoặc hiệu quả hơn là O(c⋅(d^2)) với một số cách triển khai tối ưu, trong đó c là số lượng cung (ràng buộc hai ngôi) và d là kích thước tối đa của miền giá trị của các biến.
 
 Không gian: O(c+nd) để lưu trữ các cung, các miền giá trị của biến, và cấu trúc dữ liệu cho hàng đợi, với n là số biến.
 # 2.6. Học tăng cường (Reinforcement Learning)
