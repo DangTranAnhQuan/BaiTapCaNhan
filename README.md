@@ -421,7 +421,7 @@ Mỗi bước cập nhật Q-value mất O(A) thời gian, trong đó A là số
 Thời gian cần thiết để hội tụ có thể rất lớn, phụ thuộc vào kích thước của không gian trạng thái (S), không gian hành động (A), các tham số học (α,γ), và mức độ khám phá. Trong lý thuyết, nó có thể là đa thức theo S, A, và 1/(1−γ).
 
 Không gian: O(S×A) để lưu trữ Q-table. Đây là một hạn chế lớn đối với các bài toán có không gian trạng thái hoặc không gian hành động lớn. Trong những trường hợp này, các kỹ thuật xấp xỉ hàm (function approximation), ví dụ như sử dụng mạng nơ-ron (Deep Q-Networks - DQN), thường được sử dụng thay cho Q-table tường minh.
-
+![Q-Learning](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Q-Learning.gif)
 # 3. Kết luận
 Dự án này đã thực hiện triển khai và mô tả một loạt các thuật toán tìm kiếm, từ cơ bản đến nâng cao, để giải quyết bài toán 8-puzzle. Các thuật toán bao gồm cả tìm kiếm không có thông tin, tìm kiếm có thông tin, các thuật toán tìm kiếm cục bộ và một số thuật toán cho các vấn đề phức tạp hơn như không gian trạng thái niềm tin.   
 
