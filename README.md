@@ -387,6 +387,36 @@ Thời gian: O(c.(d^3))  hoặc hiệu quả hơn là O(c⋅(d^2)) với một s
 Không gian: O(c+nd) để lưu trữ các cung, các miền giá trị của biến, và cấu trúc dữ liệu cho hàng đợi, với n là số biến.
 # 2.6. Học tăng cường (Reinforcement Learning)
 # Q-Learning
+Ý tưởng cốt lõi: Q-Learning là một thuật toán học tăng cường không cần mô hình (model-free) và ngoài chính sách (off-policy). Mục tiêu của nó là học một hàm giá trị hành động, gọi là hàm Q (Q-function), Q(s,a). Hàm này ước tính tổng phần thưởng chiết khấu kỳ vọng trong tương lai khi thực hiện hành động a tại trạng thái s và sau đó tuân theo chính sách tối ưu. Bằng cách học được hàm Q∗(s,a) tối ưu, agent có thể xác định được hành động tốt nhất tại mỗi trạng thái.
+
+Cách hoạt động:
+
+Thứ nhất, khởi tạo một bảng Q (Q-table) để lưu trữ các giá trị Q(s,a) cho tất cả các cặp (trạng thái s, hành động a). Các giá trị này thường được khởi tạo bằng 0 hoặc một giá trị tùy ý nhỏ.
+
+Thứ hai, lặp (cho mỗi bước thời gian hoặc mỗi episode): 
+a. Quan sát trạng thái hiện tại s. 
+b. Chọn hành động a: Chọn một hành động a tại trạng thái s. Việc lựa chọn này thường dựa trên chính sách ϵ-greedy: * Với xác suất ϵ (epsilon), chọn một hành động ngẫu nhiên (khám phá - exploration). * Với xác suất 1−ϵ, chọn hành động a có giá trị Q (s, a) lớn nhất (khai thác - exploitation): a = argmaxa′Q (s, a′). 
+c. Thực hiện hành động a: Agent thực hiện hành động a và chuyển đến trạng thái mới s′. Quan sát phần thưởng r nhận được từ môi trường và trạng thái kế tiếp s′. 
+d. Cập nhật giá trị Q: Cập nhật giá trị Q(s,a) trong Q-table bằng công thức cập nhật của Q-Learning: Q(s,a)←Q(s,a)+α[r+γmaxa′Q(s′,a′) − Q(s,a)] Trong đó: * α (alpha) là tốc độ học (learning rate, 0<α≤1): Xác định mức độ mà thông tin mới ghi đè lên thông tin cũ. * γ (gamma) là yếu tố chiết khấu (discount factor, 0≤γ<1): Thể hiện tầm quan trọng của các phần thưởng trong tương lai. Giá trị γ gần 0 khiến agent tập trung vào phần thưởng trước mắt, trong khi giá trị gần 1 khiến agent hướng tới phần thưởng dài hạn. * r là phần thưởng nhận được sau khi thực hiện hành động a tại trạng thái s. * s′ là trạng thái tiếp theo. * maxa′Q(s′,a′) là ước tính của giá trị tối ưu trong tương lai, tức là giá trị Q lớn nhất có thể đạt được từ trạng thái s′ bằng cách chọn hành động a′ tốt nhất. e. Cập nhật trạng thái: s←s′.
+Thứ ba, hội tụ quá trình lặp lại cho đến khi Q-table hội tụ (các giá trị Q thay đổi rất ít sau mỗi lần cập nhật) hoặc sau một số lượng lớn các episode/bước.
+
+Đặc điểm:
+
+Hoàn chỉnh (Hội tụ đến giá trị Q tối ưu): Có. Q-Learning được chứng minh là sẽ hội tụ đến hàm giá trị hành động tối ưu Q∗(s,a) nếu tất cả các cặp trạng thái-hành động được thử nghiệm đủ nhiều lần và tốc độ học α được giảm dần một cách thích hợp theo thời gian (ví dụ, thỏa mãn điều kiện Robbins-Monro).
+
+Tối ưu (Tìm ra chính sách tối ưu): Có. Khi Q-Learning hội tụ đến Q∗(s,a), chính sách tối ưu π∗(s) có thể dễ dàng được suy ra bằng cách chọn hành động có giá trị Q lớn nhất tại mỗi trạng thái: π∗(s)=argmaxaQ∗(s,a).
+
+Off-policy (Ngoài chính sách): Q-Learning là một thuật toán off-policy. Điều này có nghĩa là nó có thể học chính sách tối ưu Q∗(s,a) ngay cả khi các hành động được tạo ra từ một chính sách khác (ví dụ: chính sách ϵ-greedy dùng để khám phá). Nó học về chính sách tham lam argmaxaQ(s,a) trong khi vẫn tuân theo một chính sách khác để tạo ra hành vi.
+
+Model-free (Không cần mô hình): Q-Learning không yêu cầu agent phải có mô hình của môi trường (tức là không cần biết hàm chuyển đổi trạng thái P(s′∣s,a) hay hàm phần thưởng R(s,a,s′)). Nó học trực tiếp từ kinh nghiệm tương tác với môi trường.
+
+Độ phức tạp (ước lượng):
+
+Thời gian: 
+Mỗi bước cập nhật Q-value mất O(A) thời gian, trong đó A là số lượng hành động có thể có, để thực hiện thao tác maxa′Q(s′,a′).
+Thời gian cần thiết để hội tụ có thể rất lớn, phụ thuộc vào kích thước của không gian trạng thái (S), không gian hành động (A), các tham số học (α,γ), và mức độ khám phá. Trong lý thuyết, nó có thể là đa thức theo S, A, và 1/(1−γ).
+
+Không gian: O(S×A) để lưu trữ Q-table. Đây là một hạn chế lớn đối với các bài toán có không gian trạng thái hoặc không gian hành động lớn. Trong những trường hợp này, các kỹ thuật xấp xỉ hàm (function approximation), ví dụ như sử dụng mạng nơ-ron (Deep Q-Networks - DQN), thường được sử dụng thay cho Q-table tường minh.
 
 # 3. Kết luận
 Dự án này đã thực hiện triển khai và mô tả một loạt các thuật toán tìm kiếm, từ cơ bản đến nâng cao, để giải quyết bài toán 8-puzzle. Các thuật toán bao gồm cả tìm kiếm không có thông tin, tìm kiếm có thông tin, các thuật toán tìm kiếm cục bộ và một số thuật toán cho các vấn đề phức tạp hơn như không gian trạng thái niềm tin.   
