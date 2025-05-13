@@ -365,7 +365,26 @@ Thời gian: Thường cải thiện đáng kể hiệu suất trung bình của
 
 Không gian: Cần thêm không gian để lưu trữ các miền giá trị hiện tại của các biến, có thể bị thay đổi trong quá trình tìm kiếm. Thường là O(nd) với n là số biến và d là kích thước miền giá trị lớn nhất.
 # Thuật toán AC-3
+Ý tưởng cốt lõi: Đảm bảo tính nhất quán cung (arc consistency) cho tất cả các "cung" (arc) trong bài toán thỏa mãn ràng buộc (CSP). Một cung (Xi, Xj) được coi là nhất quán nếu với mọi giá trị x trong miền của biến Xi, tồn tại ít nhất một giá trị y trong miền của biến Xj sao cho cặp giá trị (x,y) thỏa mãn ràng buộc giữa Xi và Xj. AC-3 loại bỏ các giá trị không thỏa mãn điều kiện này khỏi miền của các biến.
 
+Cách hoạt động: 
+Thứ nhất, khởi tạo một tập hợp (thường là hàng đợi) chứa tất cả các cung (Xi​, Xj) trong CSP.
+
+Thứ hai, trong khi tập hợp cung không rỗng: Đầu tiên, ta lấy một cung (Xi, Xj) ra khỏi tập hợp. Sau đó, đối với mỗi giá trị x trong miền Di của Xi: * Nếu không tồn tại giá trị y nào trong miền Dj của Xj sao cho (x,y) thỏa mãn ràng buộc giữa Xi và Xj, thì loại bỏ x khỏi Di. Cuối cùng, nếu Di bị thay đổi (có giá trị bị loại bỏ): * Nếu Di trở thành rỗng, bài toán không có giải pháp. Dừng lại. * Thêm tất cả các cung (Xk, Xi) vào tập hợp (với Xk là các biến "hàng xóm" của Xi, tức là có ràng buộc với Xi, và X​k khác Xj). Điều này là cần thiết vì việc thay đổi Di có thể ảnh hưởng đến tính nhất quán của các cung khác liên quan đến Xi.
+
+Thứ ba, lặp lại cho đến khi tập hợp cung rỗng (không còn cung nào cần kiểm tra lại).
+
+Đặc điểm:
+
+Hoàn chỉnh: AC-3 không phải là một thuật toán tìm kiếm giải pháp hoàn chỉnh. Nó là một thuật toán suy luận ràng buộc (hoặc lan truyền ràng buộc). Sau khi AC-3 chạy, CSP có thể vẫn cần một thuật toán tìm kiếm (như Backtracking) để tìm giải pháp. Tuy nhiên, AC-3 giúp giảm kích thước miền của các biến, có thể làm cho việc tìm kiếm sau đó hiệu quả hơn đáng kể hoặc thậm chí xác định được rằng không có giải pháp.
+
+Tối ưu: Không áp dụng. Mục tiêu là làm cho CSP nhất quán cung.
+
+Độ phức tạp (ước lượng):
+
+Thời gian: O(c.(d mũ 3)) hoặc hiệu quả hơn là O(c⋅(d mũ 2)) với một số cách triển khai tối ưu, trong đó c là số lượng cung (ràng buộc hai ngôi) và d là kích thước tối đa của miền giá trị của các biến.
+
+Không gian: O(c+nd) để lưu trữ các cung, các miền giá trị của biến, và cấu trúc dữ liệu cho hàng đợi, với n là số biến.
 # 2.6. Học tăng cường (Reinforcement Learning)
 # Q-Learning
 
