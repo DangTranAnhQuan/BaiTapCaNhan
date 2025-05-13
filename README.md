@@ -394,9 +394,13 @@ Cách hoạt động:
 Thứ nhất, khởi tạo một bảng Q (Q-table) để lưu trữ các giá trị Q(s,a) cho tất cả các cặp (trạng thái s, hành động a). Các giá trị này thường được khởi tạo bằng 0 hoặc một giá trị tùy ý nhỏ.
 
 Thứ hai, lặp (cho mỗi bước thời gian hoặc mỗi episode): 
+
 a. Quan sát trạng thái hiện tại s. 
+
 b. Chọn hành động a: Chọn một hành động a tại trạng thái s. Việc lựa chọn này thường dựa trên chính sách ϵ-greedy: * Với xác suất ϵ (epsilon), chọn một hành động ngẫu nhiên (khám phá - exploration). * Với xác suất 1−ϵ, chọn hành động a có giá trị Q (s, a) lớn nhất (khai thác - exploitation): a = argmaxa′Q (s, a′). 
+
 c. Thực hiện hành động a: Agent thực hiện hành động a và chuyển đến trạng thái mới s′. Quan sát phần thưởng r nhận được từ môi trường và trạng thái kế tiếp s′. 
+
 d. Cập nhật giá trị Q: Cập nhật giá trị Q(s,a) trong Q-table bằng công thức cập nhật của Q-Learning: Q(s,a)←Q(s,a)+α[r+γmaxa′Q(s′,a′) − Q(s,a)] Trong đó: * α (alpha) là tốc độ học (learning rate, 0<α≤1): Xác định mức độ mà thông tin mới ghi đè lên thông tin cũ. * γ (gamma) là yếu tố chiết khấu (discount factor, 0≤γ<1): Thể hiện tầm quan trọng của các phần thưởng trong tương lai. Giá trị γ gần 0 khiến agent tập trung vào phần thưởng trước mắt, trong khi giá trị gần 1 khiến agent hướng tới phần thưởng dài hạn. * r là phần thưởng nhận được sau khi thực hiện hành động a tại trạng thái s. * s′ là trạng thái tiếp theo. * maxa′Q(s′,a′) là ước tính của giá trị tối ưu trong tương lai, tức là giá trị Q lớn nhất có thể đạt được từ trạng thái s′ bằng cách chọn hành động a′ tốt nhất. e. Cập nhật trạng thái: s←s′.
 Thứ ba, hội tụ quá trình lặp lại cho đến khi Q-table hội tụ (các giá trị Q thay đổi rất ít sau mỗi lần cập nhật) hoặc sau một số lượng lớn các episode/bước.
 
