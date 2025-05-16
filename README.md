@@ -341,7 +341,6 @@ Cách hoạt động: Sử dụng đệ quy để khám phá đường đi. Thê
 
 # Thuật toán Forward Checking
 Ý tưởng cốt lõi: Khi một giá trị được gán cho một biến trong quá trình tìm kiếm (thường là trong Backtracking Search), thuật toán này sẽ "nhìn về phía trước" (forward) để kiểm tra các biến chưa được gán có ràng 
-
 buộc với biến vừa được gán. Nó loại bỏ các giá trị không tương thích khỏi miền giá trị của các biến chưa được gán đó, giúp phát hiện sớm các ngõ cụt.
 
 Cách hoạt động:
@@ -364,6 +363,7 @@ Tối ưu: Không áp dụng trực tiếp. Mục tiêu của Forward Checking l
 Thời gian: Thường cải thiện đáng kể hiệu suất trung bình của Backtracking Search bằng cách giảm số lượng các nút phải duyệt. Tuy nhiên, trong trường hợp xấu nhất, độ phức tạp vẫn có thể là hàm mũ so với kích thước bài toán. Chi phí cho mỗi lần gán biến tăng lên do phải kiểm tra các biến liên quan.
 
 Không gian: Cần thêm không gian để lưu trữ các miền giá trị hiện tại của các biến, có thể bị thay đổi trong quá trình tìm kiếm. Thường là O(nd) với n là số biến và d là kích thước miền giá trị lớn nhất.
+![ForwardChecking](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Forward_Checking.gif)
 # Thuật toán AC-3
 Ý tưởng cốt lõi: Đảm bảo tính nhất quán cung (arc consistency) cho tất cả các "cung" (arc) trong bài toán thỏa mãn ràng buộc (CSP). Một cung (Xi, Xj) được coi là nhất quán nếu với mọi giá trị x trong miền của biến Xi, tồn tại ít nhất một giá trị y trong miền của biến Xj sao cho cặp giá trị (x,y) thỏa mãn ràng buộc giữa Xi và Xj. AC-3 loại bỏ các giá trị không thỏa mãn điều kiện này khỏi miền của các biến.
 
