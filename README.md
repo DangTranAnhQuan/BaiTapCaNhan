@@ -424,13 +424,13 @@ Thời gian cần thiết để hội tụ có thể rất lớn, phụ thuộc 
 Không gian: O(S×A) để lưu trữ Q-table. Đây là một hạn chế lớn đối với các bài toán có không gian trạng thái hoặc không gian hành động lớn. Trong những trường hợp này, các kỹ thuật xấp xỉ hàm (function approximation), ví dụ như sử dụng mạng nơ-ron (Deep Q-Networks - DQN), thường được sử dụng thay cho Q-table tường minh.
 ![Q-Learning](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/Q-Learning.gif)
 # 3. Kết luận
-Dự án này đã thực hiện triển khai và mô tả một loạt các thuật toán tìm kiếm, từ cơ bản đến nâng cao, để giải quyết bài toán 8-puzzle. Các thuật toán bao gồm cả tìm kiếm không có thông tin, tìm kiếm có thông tin, các thuật toán tìm kiếm cục bộ và một số thuật toán cho các vấn đề phức tạp hơn như không gian trạng thái niềm tin.   
+Dự án này đã thực hiện triển khai và mô tả một loạt các thuật toán tìm kiếm, từ cơ bản đến nâng cao, để giải quyết bài toán 8-puzzle. Các thuật toán bao gồm cả tìm kiếm không có thông tin, tìm kiếm có thông tin, các thuật toán tìm kiếm cục bộ và một số thuật toán cho các vấn đề phức tạp hơn như không gian trạng thái niềm tin và cả thuật toán học tăng cường.   
 
 Một số kết quả đạt được:
 
 Hiểu rõ về ý tưởng, cách hoạt động, ưu nhược điểm và độ phức tạp của nhiều thuật toán tìm kiếm phổ biến.
 
-Có được một bộ mã nguồn Python triển khai các thuật toán này, có thể dùng để so sánh và đối chiếu hiệu suất của chúng trên bài toán 8-puzzle.
+Triển khai các thuật toán này bằng ngôn ngữ Python, có thể dùng để so sánh và đối chiếu hiệu suất của chúng trên bài toán 8-puzzle.
 
 Phân tích được các đặc tính quan trọng như tính hoàn chỉnh, tính tối ưu, độ phức tạp thời gian và không gian của mỗi thuật toán trong bối cảnh giải quyết 8-puzzle.
 
@@ -441,5 +441,9 @@ Các thuật toán có thông tin như A* và IDA* (với heuristic tốt) thư�
 Các thuật toán không có thông tin như BFS và IDS đảm bảo tính tối ưu về số bước nhưng có thể tốn kém về tài nguyên.
 
 Các thuật toán tìm kiếm cục bộ nhanh và tiết kiệm bộ nhớ nhưng thường không đảm bảo tìm được lời giải hoặc lời giải tối ưu.
+
+Các thuật toán như Backtracking và Forward Checking cung cấp các phương pháp hiệu quả cho các bài toán có ràng buộc, trong đó Forward Checking giúp sớm phát hiện các ngõ cụt. 
+
+Q-Learning, mở ra hướng tiếp cận học một chính sách tối ưu thông qua tương tác với môi trường, dù quá trình hội tụ có thể cần nhiều thời gian và không gian lưu trữ đáng kể cho Q-table. 
 
 Nhìn chung, dự án cung cấp một cái nhìn toàn diện và thực tiễn về các phương pháp tìm kiếm trong trí tuệ nhân tạo thông qua một bài toán kinh điển.
