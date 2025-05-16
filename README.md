@@ -385,6 +385,7 @@ Tối ưu: Không áp dụng. Mục tiêu là làm cho CSP nhất quán cung.
 Thời gian: O(c.(d^3))  hoặc hiệu quả hơn là O(c⋅(d^2)) với một số cách triển khai tối ưu, trong đó c là số lượng cung (ràng buộc hai ngôi) và d là kích thước tối đa của miền giá trị của các biến.
 
 Không gian: O(c+nd) để lưu trữ các cung, các miền giá trị của biến, và cấu trúc dữ liệu cho hàng đợi, với n là số biến.
+![AC_3](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/AC_3.gif)
 # 2.6. Học tăng cường (Reinforcement Learning)
 # Q-Learning
 Ý tưởng cốt lõi: Q-Learning là một thuật toán học tăng cường không cần mô hình (model-free) và ngoài chính sách (off-policy). Mục tiêu của nó là học một hàm giá trị hành động, gọi là hàm Q (Q-function), Q(s,a). Hàm này ước tính tổng phần thưởng chiết khấu kỳ vọng trong tương lai khi thực hiện hành động a tại trạng thái s và sau đó tuân theo chính sách tối ưu. Bằng cách học được hàm Q∗(s,a) tối ưu, agent có thể xác định được hành động tốt nhất tại mỗi trạng thái.
