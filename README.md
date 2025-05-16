@@ -195,7 +195,7 @@ Cách hoạt động: Lặp: tìm hàng xóm, nếu có hàng xóm tốt hơn đ
 Nhận xét về hiệu suất: Thuật toán leo đồi này rất nhanh và tiết kiệm bộ nhớ nhưng thường không tìm được lời giải tối ưu và dễ bị kẹt.
 ![SimpleHill](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/SimpleHill_new.gif)
 
-# Thuật toán Hill Climbing  
+# Thuật toán Steepest Ascent Hill Climbing  
 Ý tưởng cốt lõi: Tìm kiếm cục bộ. Xem xét tất cả hàng xóm và di chuyển đến hàng xóm tốt nhất (có h thấp nhất). 
 
 Cách hoạt động: Lặp: đánh giá tất cả hàng xóm, chọn hàng xóm tốt nhất (nếu tốt hơn hiện tại) để di chuyển, nếu không thì dừng. 
@@ -208,7 +208,7 @@ Cách hoạt động: Lặp: đánh giá tất cả hàng xóm, chọn hàng xó
   
   Không gian: O(1).
 Nhận xét về hiệu suất: Tương tự Simple Hill Climbing thì thuật toán leo đồi Hill Climbing cũng rất nhanh và tiết kiệm bộ nhớ nhưng thường không tìm được lời giải tối ưu và dễ bị kẹt.
-![HillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing_1.gif)
+![SteepestAscentHillCLimbing](https://github.com/DangTranAnhQuan/BaiTapCaNhan/blob/main/HillClimbing_1.gif)
 
 # Thuật toán Stochastic Climbing
 Ý tưởng cốt lõi: Tìm kiếm cục bộ. Chọn ngẫu nhiên một hàng xóm, nếu tốt hơn thì di chuyển, nếu không thì thử hàng xóm ngẫu nhiên khác. 
